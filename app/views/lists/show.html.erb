@@ -1,5 +1,13 @@
 
-<p><%= @list.name %></p>
+<h1><strong><%= @list.name %></strong></h1>
+<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+
+<ul>
+<% @list.bookmarks.each do |b| %>
+  <li><h3><%= b.movie.title %></h3></li>
+  <i>"<%= b.comment %>"</i>
+  <% end %>
+</ul>
 
 
 <p><%= link_to "Add a bookmark",  new_list_bookmark_path(@list)  %></p>

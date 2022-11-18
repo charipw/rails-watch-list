@@ -1,10 +1,19 @@
-<h1>My lists</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path "wvsyvvumy8rd0asrdf6y"%>');">
+  <div class="container">
+    <h1 class="text-center">Save any kind of movies</h1>
+    <p class="text-center">Start now!</p>
+  </div>
+</div>
 
+  <% @lists.each do |list| %>
+  <div class="card" style="width: 18rem;">
 
-<% @lists.each do |list| %>
-<ul>
-  <li><%= link_to list.name, list_path(list) %></li>
-</ul>
+    <h5 class="card-title "><%= link_to list.name, list_path(list)%></h5>
+    <% if list.photo.attached? %>
+    <%= cl_image_tag list.photo.key, width: 200, height: 150, crop: :fill %>
+    <% end %>
+  </div>
   <% end %>
 
-<p><%= link_to "Create a new list", new_list_path %></p>
+
+<button type="button" class="btn btn-secondary"><%= link_to "Create a new list", new_list_path %></button>

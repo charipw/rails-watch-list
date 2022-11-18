@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsWatchList</title>
+    <title>Charleen WatchList</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,24 @@
   </head>
 
   <body>
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+      <div class="container-fluid">
+        <%= link_to "#", class: "navbar-brand" do %>
+          <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+        <% end %>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item active">
+              <%= link_to "My lists", lists_path(), class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "New list", new_list_path(), class: "nav-link" %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>
