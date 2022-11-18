@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+gem "cloudinary"
 gem "dotenv-rails", groups: [:development, :test]
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
